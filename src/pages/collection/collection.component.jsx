@@ -6,10 +6,8 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 import './collection.styles.scss';
 
 const CollectionPage = () => {
-  let { collectionId } = useParams();
-  const collection = useSelector(state =>
-    selectCollection(collectionId)(state)
-  );
+  const { collectionId } = useParams();
+  const collection = useSelector(selectCollection(collectionId));
   const { title, items } = collection;
 
   useEffect(() => {
